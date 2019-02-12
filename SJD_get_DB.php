@@ -2,8 +2,8 @@
 // SJD_get_DB
 $servername = "localhost";
 $username = "root";
-$password = "Group4";
-$dbname = "userdb";
+$password = "";
+$dbname = "mydb";
 
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);

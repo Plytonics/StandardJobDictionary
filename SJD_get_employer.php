@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "Group4";
-$dbname = "userdb";
+$password = "";
+$dbname = "mydb";
 
 // Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
@@ -21,7 +21,8 @@ if ($conn->query($sql) === TRUE) {
     echo "Error creating database: " . $conn->error;
 }*/
 $sql = "CREATE TABLE JobInfo (
-title VARCHAR(30) PRIMARY KEY, 
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+title VARCHAR(30), 
 degree VARCHAR(30), 
 transport VARCHAR(3), 
 remote VARCHAR(3), 
@@ -114,11 +115,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 			echo "summary is empty";
 		}
 		
-		$sql = "INSERT INTO jobinfo (title, degree, transport, remote, addr, stat, type, 
+		$sql = "INSERT INTO jobinfo (id, title, degree, transport, remote, addr, stat, type, 
 				salary, task, skillreq, skillreqpro, langreq, langreqpro, summary)
 		VALUES ('0','$insert_jobtitle', '$insert_degree', '$insert_transport', '$insert_remote', '$insert_workaddr',
 				'$insert_status','$insert_jobtype','$insert_salary','$insert_task','$insert_skillreq','$insert_skillreqpro',
-				'$insert_langreq','$insert_langreqpro')";
+				'$insert_langreq','$insert_langreqpro','$insert_summary')";
 
 if (mysqli_query($conn, $sql)) {
 		echo "New record created successfully";

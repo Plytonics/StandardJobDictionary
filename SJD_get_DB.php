@@ -1,8 +1,8 @@
 <?php
 // SJD_get_DB
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "username";
+$password = "password";
 $dbname = "mydb";
 
 	// Create connection
@@ -15,13 +15,14 @@ $dbname = "mydb";
 
 //*******once you create the database you dont need these commands anymore*********
 // Create database
-//$sql = "CREATE DATABASE myDB";
-/*if ($conn->query($sql) === TRUE) {
+/*$sql = "CREATE DATABASE myDB";
+if ($conn->query($sql) === TRUE) {
     echo "Database created successfully";
 } else {
     echo "Error creating database: " . $conn->error;
 }*/
-$sql = "CREATE TABLE UserInfo (
+
+$sql = "CREATE TABLE userinfo (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 firstname VARCHAR(30) NOT NULL,
 lastname VARCHAR(30) NOT NULL,
@@ -30,6 +31,11 @@ skills VARCHAR(30),
 skillProf INT(10)
 )"; 
 
+if($conn -> query($sql) == TRUE){
+	echo "Table MyGuests created successfully";
+} else{
+	echo "Error creating table." . $conn->error;
+}
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
@@ -80,16 +86,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 		echo "New record created successfully";
 	} else {
 		echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-}
+	}
 	
 $conn->close();
-}
+	}
 
 	elseif ( isset($_POST['ChangeBT']) )   {
 	echo "this will edit the user.";
   } elseif ( isset($_POST['DeleteBT']) )   {
     //change every letter to a different colour
 	echo "this will delete the user.";
+	
+	$sql = "DELETE FROM userinfo WHERE userid =" $userid;
+	
+	if(mysqli_query($conn, $sql)){
+		
+		echo"record deleted";
+	}else {
+		echo"error deleting".mysqli_error($conn);
+	}
   } else   {
     //nothing to do here, just nice to have a comment letting you know
   }

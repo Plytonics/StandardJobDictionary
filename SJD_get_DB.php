@@ -26,16 +26,16 @@ $sql = "CREATE TABLE userinfo (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 firstname VARCHAR(30) NOT NULL,
 lastname VARCHAR(30) NOT NULL,
-userID INT(50),
+userID VARCHAR(50),
 skills VARCHAR(30),
 skillProf INT(10)
 )"; 
 
-if($conn -> query($sql) == TRUE){
+/*if($conn -> query($sql) == TRUE){
 	echo "Table MyGuests created successfully";
 } else{
 	echo "Error creating table." . $conn->error;
-}
+}*/
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
@@ -97,14 +97,16 @@ $conn->close();
     //change every letter to a different colour
 	echo "this will delete the user.";
 	
-	$sql = "DELETE FROM userinfo WHERE userid =" $userid;
+	//Define userID
+	//take in user input for $userID
+	//$sql = "DELETE FROM userinfo WHERE userid =" $userid;
 	
-	if(mysqli_query($conn, $sql)){
+	/*if(mysqli_query($conn, $sql)){
 		
 		echo"record deleted";
 	}else {
 		echo"error deleting".mysqli_error($conn);
-	}
+	}*/
   } else   {
     //nothing to do here, just nice to have a comment letting you know
   }

@@ -1,0 +1,147 @@
+<?php
+mysql_connect("localhost", "username", "password") or die("could not connect");
+mysql_select_db("mydb") or die("could not find db");
+
+if(isset($_POST['search'])){
+	
+	$searchq = $post['search'];
+	$searchq = preg_replace("#[^0-9a-z]#i","",$searchq);
+	
+	$query = mysql_query("SELECT * FROM `userinfo` WHERE firstname1 LIKE '%$searchq%'") or die("could not search!");
+	$count = mysql_num_rows($query);
+	if($count == 0){
+		
+		$output = 'There was no search results!';
+	}else{	
+		while($row = mysql_fetch_array($query)){
+			$firstname1 = $row['firstname'];
+			$lastname = $row['lastname'];
+			$userid = $row['userid'];
+			
+			$output .= '<div>'.$firstname1.''.$lastname.'</div>';
+		}
+	}
+}
+
+?>
+
+<!DOCTYPE HTML>
+<html>
+<!-- SJD_index -->
+	<head>	
+		<script>
+		
+		$(document).ready(function()
+		{
+			$('.button').click(function()
+			{
+				var clickBtnValue = $(this).val();
+				var ajaxurl = 'Admin.php',
+				data =  {'action': clickBtnValue};
+						$.post(ajaxurl, data, function (response){
+						// Response div goes here.
+						alert("action performed successfully");
+						});
+			});
+		});
+		
+		</script>
+	</head>
+	
+    <body bgcolor = "#FFFFFF">
+    
+       
+        <div align = "center">
+         <div style = "width:1200px; border: solid 1px #228B22; " align = "left">
+            <div style = "background-color:#228B22; color:#FFFFFF; padding:3px;"><b>Admin</b></div>    
+            <div style = "margin:30px">
+			
+				<div align = "center">
+				<form action="Admin_Interface.html" method="post">
+				<input type="text" name="search" placeholder="Search for user..."/>
+				<input type="submit" value="Search"/>
+				</form>
+                </form>
+				</div>
+				
+			<p>
+			</p>
+			
+			<div align = "center">	
+		    <div style = "width:600px; height: 500px; border: solid 1px #000000; " align = "left">
+            <div style = "background-color:#228B22; color:#FFFFFF; padding:0px;"><b></b></div>    
+            <div style = "margin:30px">
+			
+			
+			
+			
+			</div>
+			</div>
+			</div>
+			
+			
+			
+			<div align = "left">
+			<div style = "width:200px; border: solid 1px #000000; " align = "left">
+            <div style = "background-color:#228B22; color:#FFFFFF; padding:0px;"><b></b></div>    
+            <div style = "margin:20px">
+			
+
+				<form action="SJD_get_DB.php" method="post">
+                <label>User ID:  </label><input type="text" name="userid"><br>
+                <input type="submit" name="DeleteBT" value="Delete" /><br />
+                </form>
+			</div>
+			</div>
+			</div>
+				
+				
+                
+				
+				
+            <div style = "font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error; ?></div>
+		    
+			
+			<div align = "center">
+			<div id="piechart"></div>
+			<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+			<script type="text/javascript">
+			// Load google charts
+			google.charts.load('current', {'packages':['corechart']});
+			google.charts.setOnLoadCallback(drawChart);
+
+			// Draw the chart and set the chart values
+			function drawChart() {
+			  var data = google.visualization.arrayToDataTable([
+			  ['Task', 'Hours per Day'],
+			  ['Engineering', 8],
+			  ['Health', 2],
+			  ['Manufacturing', 4],
+			  ['Finance', 2],
+			  ['Energy', 8]
+			]);
+
+			  // Optional; add a title and set the width and height of the chart
+			  var options = {'Title':'Job listings', 'width':550, 'height':400};
+
+			  // Display the chart inside the <div> element with id="piechart"
+			  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+			  chart.draw(data, options);
+			}
+			</script>
+			</div>
+						
+			
+			
+			<form action="MainPage.html">
+            <input type="submit" value="Back" />
+		    </form>
+			</div>  
+            </div>    
+         </div>    
+      </div>	  
+	  
+	  <?php print("$output");?>
+	  
+   </body>
+</html>

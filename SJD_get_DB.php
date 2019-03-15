@@ -8,10 +8,10 @@ $dbname = "mydb";
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
 	// Check connection
-	if ($conn->connect_error) 
+	if ($conn->connect_error)
 	{
 		die("Connection failed: " . $conn->connect_error);
-	} 
+	}
 
 //*******once you create the database you dont need these commands anymore*********
 // Create database
@@ -23,53 +23,53 @@ if ($conn->query($sql) === TRUE) {
 }*/
 
 $sql = "CREATE TABLE userinfo (
-id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 firstname VARCHAR(30) NOT NULL,
 lastname VARCHAR(30) NOT NULL,
 userID VARCHAR(50),
 skills VARCHAR(30),
 skillProf INT(10)
-)"; 
+)";
 
-/*if($conn -> query($sql) == TRUE){
-	echo "Table MyGuests created successfully";
-} else{
-	echo "Error creating table." . $conn->error;
-}*/
+// if($conn->query($sql) == TRUE){
+// 	echo "Table MyGuests created successfully";
+// } else{
+// 	echo "Error creating table." . $conn->error;
+// }
 
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") 
+if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
 	if (isset($_POST['SubmitBT']))
 	{
     // collect value of input fields
 	// get first name
 	$firstname1 = htmlspecialchars($_REQUEST['firstname']);
-    if (empty($firstname1)) 
+    if (empty($firstname1))
 	{
         echo "firstname is empty";
 	}
 	// get last name
 	$lastname = htmlspecialchars($_REQUEST['lastname']);
-    if (empty($lastname)) 
+    if (empty($lastname))
 	{
         echo "lastname is empty";
 	}
 	// get user ID
 	$userid = htmlspecialchars($_REQUEST['userid']);
-    if (empty($userid)) 
+    if (empty($userid))
 	{
         echo "userid is empty";
 	}
 	// get skill
 	$skill = htmlspecialchars($_REQUEST['skill']);
-    if (empty($skill)) 
+    if (empty($skill))
 	{
         echo "skill is empty";
 	}
 	// get skill proficiency
 	$skillpro = htmlspecialchars($_REQUEST['skillpro']);
-    if (empty($skill)) 
+    if (empty($skill))
 	{
         echo "skillpro is empty";
 	}
@@ -77,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 	{
 		echo "skillpro violates legal range of values";
 	}
-	
+
 
 	$sql = "INSERT INTO userinfo (id, firstname, lastname, userID, skills, skillProf)
 	VALUES ('0', '$firstname1', '$lastname', '$userid', '$skill', '$skillpro')";
@@ -87,7 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 	} else {
 		echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 	}
-	
+
 $conn->close();
 	}
 
@@ -96,13 +96,13 @@ $conn->close();
   } elseif ( isset($_POST['DeleteBT']) )   {
     //change every letter to a different colour
 	echo "this will delete the user.";
-	
+
 	//Define userID
 	//take in user input for $userID
 	//$sql = "DELETE FROM userinfo WHERE userid =" $userid;
-	
+
 	/*if(mysqli_query($conn, $sql)){
-		
+
 		echo"record deleted";
 	}else {
 		echo"error deleting".mysqli_error($conn);

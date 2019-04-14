@@ -3,13 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\jobinfo;
+use App\UserProfiles;
 
 class BackupController extends Controller
 {
     //
-	public function index()
+	public function createJobInfo(Request $request)
 	{
-		return response("Backed up");
+		$newJob = JobInfo::create($request->json()->all());
+		return $newJob->id;
 	}
-	
+
+	public function createUserProfiles(Request $request)
+	{
+		$newJob = UserProfiles::create($request->json()->all());
+		return $newUser->id;
+	}
+
 }

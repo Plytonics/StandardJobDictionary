@@ -32,21 +32,26 @@ Route::get('SJD_delete_comp_index', function () {
 });
 
 // SJD employer index
-Route::get('SJD_employer_index', function () {
+Route::get('templates', function () {
     return view('SJD_employer_index');
 });
 
-// SJD get Dash
-Route::get('SJD_index', function () {
+// SJD get index
+Route::get('candidate', function () {
     return view('SJD_index');
 });
 
-// SJD index
-Route::get('SJD_Question', function () {
+// SJD question
+Route::get('questions', function () {
     return view('SJD_Question');
 });
 
-// SJD Questions
+// SJD company dash
+Route::get('company', function () {
+    return view('SJD_get_Dash');
+});
+
+// welcome
 Route::get('welcome', function () {
     return view('welcome');
 });

@@ -29,15 +29,15 @@
             <div style = "background-color:#228B22; color:#FFFFFF; padding:3px;"><b>Harvest </b></div>    
             <div style = "margin:30px">
             
-				<form action="SJD_index.html">
+				<form action="https://job.app/candidate">
                 <input type="submit" value="Candidates" />
 				</form>
 				
-				<form action="SJD_get_Dash.html">
+				<form action="https://job.app/company">
                 <input type="submit" value="Company" />
 				</form>
 				
-				<form action="Admin_Interface.php">
+				<form action="https://job.app/admin">
                 <input type="submit" value="Admin" />
 				</form>
 

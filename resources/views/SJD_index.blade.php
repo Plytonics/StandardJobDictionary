@@ -50,7 +50,7 @@
 				<input type="submit" name="DeleteBT" value="Remove" /><br />
                 </form>
 				<br />
-				<form action="MainPage.html">
+				<form action="https://job.app/MainPage">
                 <input type="submit" value="Back" />
 				</form>
                 

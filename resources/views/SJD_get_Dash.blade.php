@@ -29,21 +29,21 @@
             <div style = "background-color:#228B22; color:#FFFFFF; padding:3px;"><b>Employer </b></div>    
             <div style = "margin:30px">
             
-				<form action="SJD_employer_index.html">
+				<form action="https://job.app/templates">
                 <input type="submit" value="Templates" />
 				</form>
 				
-				<form action="SJD_Question.html">
+				<form action="https://job.app/questions">
                 <input type="submit" value="Questions" />
 				</form>
 				
-				<form action="">
+				<form action="https://job.app/invitations">
                 <input type="submit" value="Invitations" />
 				</form>
 				
 				</form>
 				<br />
-				<form action="MainPage.html">
+				<form action="https://job.app/MainPage">
                 <input type="submit" value="Back" />
 				</form>
 

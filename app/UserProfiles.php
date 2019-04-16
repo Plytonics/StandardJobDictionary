@@ -22,7 +22,7 @@ class UserProfiles extends Model
       "firstname", "lastname", "skill", "skillpro"
     ];
 
-    protected $table = 'userinfo';
+    protected $table = 'userprofiles';
 
     public $timestamps = false;
 }

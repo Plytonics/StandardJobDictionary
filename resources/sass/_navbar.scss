@@ -1,0 +1,114 @@
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#mainNav {
+  min-height: 56px;
+  background-color: $black;
+  font-weight: 700;
+  .navbar-toggler {
+    background-color: $primary;
+    font-size: 80%;
+    padding: 0.75rem;
+    color: $black;
+    &:focus {
+      outline: none;
+    }
+  }
+  .navbar-brand {
+    color: $white;
+
+    padding: .9rem 0;
+    &:hover {
+      color: $primary;
+    }
+    &:active {
+      color: darken($primary, 15%);
+    }
+  }
+  .navbar-nav {
+    .nav-link {
+      color: $white;
+      padding: 1.5rem 1.5rem 1.25rem;
+      border-bottom: 0.25rem solid transparent;
+      &:hover {
+        color: $primary;
+      }
+      &:active {
+        color: darken($primary, 15%);
+      }
+      &.active {
+        color: $primary;
+        outline: none;
+        border-bottom: 0.25rem solid $primary;
+      }
+      &.dropdown {
+        .dropdown-toggle {
+          &::after {
+            width: 1rem;
+            text-align: center;
+            float: right;
+            vertical-align: 0;
+            border: 0;
+            font-weight: 900;
+            content: '\f105';
+          }
+        }
+        &.show {
+          .dropdown-toggle::after {
+            content: '\f107';
+          }
+        }
+        &.no-arrow {
+          .dropdown-toggle::after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: 992px) {
+    padding-top: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+    background-color: $black;
+    .navbar-brand {
+      padding: .5rem 0;
+      color: $white;
+    }
+    .nav-link {
+      color: $white;
+      padding: 1.5rem 1.5rem 1.25rem;
+      border-bottom: 0.25rem solid transparent;
+      &:hover {
+        color: $primary;
+      }
+      &:active {
+        color: darken($primary, 15%);
+      }
+      &.active {
+        color: $primary;
+        outline: none;
+        border-bottom: 0.25rem solid $primary;
+      }
+    }
+  }
+}
+
+#sidebarNav .nav-link {
+  width: 10rem;
+}
+
+#notify {
+  font-size: .5rem;
+  position: fixed;
+  animation: 2s ease-in-out pulse infinite;
+}

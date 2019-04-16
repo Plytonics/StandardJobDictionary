@@ -11,51 +11,14 @@
 |
 */
 
-// indexChange
-Route::get('indexChange', function () {
-    return view('indexChange');
+Route::get('/', function() {
+  return redirect('login');
 });
 
-// MainPage
-Route::get('MainPage', function () {
-    return view('MainPage');
+Route::middleware('auth')->group(function() {
+  Route::get('dashboard/job', 'DashboardController@showJobInfo')->name('showJobInfo');
+  Route::get('dashboard/user', 'DashboardController@showUserInfo')->name('showUserInfo');
 });
 
-// SDJ Delete cand imdex
-Route::get('SJD_delete_cand_index', function () {
-    return view('SJD_delete_cand_index');
-});
-
-// SJD delete comp index
-Route::get('SJD_delete_comp_index', function () {
-    return view('SJD_delete_comp_index');
-});
-
-// SJD employer index
-Route::get('templates', function () {
-    return view('SJD_employer_index');
-});
-
-// SJD get index
-Route::get('candidate', function () {
-    return view('SJD_index');
-});
-
-// SJD question
-Route::get('questions', function () {
-    return view('SJD_Question');
-});
-
-// SJD company dash
-Route::get('company', function () {
-    return view('SJD_get_Dash');
-});
-
-// welcome
-Route::get('welcome', function () {
-    return view('welcome');
-});
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

@@ -29,25 +29,25 @@
             <div style = "background-color:#228B22; color:#FFFFFF; padding:3px;"><b>Harvest </b></div>    
             <div style = "margin:30px">
             
-				<form action="SJD_employer_index.html">
+				<form action="https://job.app/templates">
                 <input type="submit" value="open ended" />
 				</form>
 				
-				<form action="SJD_employer_index.html">
+				<form action="https://job.app/templates">
                 <input type="submit" value="Single Choice" />
 				</form>
 				
-				<form action="SJD_employer_index.html">
+				<form action="https://job.app/templates">
                 <input type="submit" value="Multi Choice" />
 				</form>
 				
-				<form action="SJD_employer_index.html">
+				<form action="https://job.app/templates">
                 <input type="submit" value="Yes/No" />
 				</form>
 				
 				</form>
 				<br />
-				<form action="SJD_get_Dash.html">
+				<form action="https://job.app/employer">
                 <input type="submit" value="Back" />
 				</form>
 				

@@ -92,18 +92,18 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
                       @if($jobs->count() > 0)
                         @foreach($jobs as $job)
+                          <tr>
                             <th>{{ $job->title }}</th>
                             <th>{{ $job->description }}</th>
                             <th>{{ $job->skillreq }}</th>
                             <th>{{ $job->skillreqpro }}</th>
+                          </tr>
                         @endforeach
                       @else
                         <th colspan="4">No Data Available</th>
                       @endif
-                      </tr>
                     </tbody>
                   </table>
                 </div>

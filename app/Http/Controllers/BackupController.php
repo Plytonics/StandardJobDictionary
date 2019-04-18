@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\jobinfo;
+use App\JobInfo;
 use App\UserProfiles;
 
 class BackupController extends Controller

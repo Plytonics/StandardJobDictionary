@@ -16,9 +16,10 @@ Route::get('indexChange', function () {
     return view('indexChange');
 });
 
-//get route test req hello world
-
+//routes to tables
 Route::get('dashboard/jobinfo', "dashboard@showjobtable");
+
+Route::get('dashboard/userinfo', "dashboard@showusertable");
 
 // MainPage
 Route::get('MainPage', function () {

@@ -50,8 +50,11 @@
 				<input type="submit" name="DeleteBT" value="Remove" /><br />
                 </form>
 				<br />
+				
+				<!-- Back button -->
 				<form action="https://job.app/MainPage">
                 <input type="submit" value="Back" />
+				
 				</form>
                 
             <div style = "font-size:11px; color:#cc0000; margin-top:10px"></div>

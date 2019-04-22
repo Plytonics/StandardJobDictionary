@@ -58,13 +58,17 @@
 				
 				<label>Job Summary: </label><input type="text" name="summary"><br /><br />
 				
+				<!-- Submission buttons -->
                 <input type="submit" name="SubmitBT" value="Submit" /><br />
 				<input type="submit" name="ChangeBT" value="Change" /><br />
 				<input type="submit" name="ArcivBT" value="Arciving" /><br />
                 </form>
 				<br />
+				
+				<!-- Back button -->
 				<form action="https://job.app/employer">
                 <input type="submit" value="Back" />
+				
 				</form>
                 
             <div style = "font-size:11px; color:#cc0000; margin-top:10px"></div>

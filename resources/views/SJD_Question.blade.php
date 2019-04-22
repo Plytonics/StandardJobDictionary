@@ -29,24 +29,29 @@
             <div style = "background-color:#228B22; color:#FFFFFF; padding:3px;"><b>Harvest </b></div>    
             <div style = "margin:30px">
             
-				<form action="https://job.app/templates">
+				<!-- Open ended question button -->
+				<form action="https://job.app/company">
                 <input type="submit" value="open ended" />
 				</form>
 				
-				<form action="https://job.app/templates">
+				<!-- Single choice question button -->
+				<form action="https://job.app/company">
                 <input type="submit" value="Single Choice" />
 				</form>
 				
-				<form action="https://job.app/templates">
+				<!-- Multiple choice question button -->
+				<form action="https://job.app/company">
                 <input type="submit" value="Multi Choice" />
 				</form>
 				
-				<form action="https://job.app/templates">
+				<!-- Yes/no question button -->
+				<form action="https://job.app/company">
                 <input type="submit" value="Yes/No" />
 				</form>
 				
 				</form>
 				<br />
+				<!-- Back button -->
 				<form action="https://job.app/employer">
                 <input type="submit" value="Back" />
 				</form>

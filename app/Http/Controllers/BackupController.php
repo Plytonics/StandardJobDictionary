@@ -17,7 +17,7 @@ class BackupController extends Controller
 
 	public function createUserProfiles(Request $request)
 	{
-		$newJob = UserProfiles::create($request->json()->all());
+		$newUser = UserProfiles::create($request->json()->all());
 		return $newUser->id;
 	}
 

@@ -18,6 +18,8 @@ Route::get('/', function() {
 Route::middleware('auth')->group(function() {
   Route::get('dashboard/job', 'DashboardController@showJobInfo')->name('showJobInfo');
   Route::get('dashboard/user', 'DashboardController@showUserInfo')->name('showUserInfo');
+  Route::post('dashboard/job/search', 'DashboardController@searchJobInfo')->name('jobsearch');
+  Route::post('dashboard/user/search', 'DashboardController@searchUserInfo')->name('jobsearch');
 });
 
 

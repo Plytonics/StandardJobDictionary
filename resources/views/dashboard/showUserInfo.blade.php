@@ -34,18 +34,18 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
                     @if($users->count() > 0)
                       @foreach($users as $user)
+                      <tr>
                           <th>{{ $user->firstname }}</th>
                           <th>{{ $user->lastname }}</th>
                           <th>{{ $user->skill }}</th>
                           <th>{{ $user->skillpro }}</th>
+                      </tr>
                       @endforeach
                     @else
                       <th colspan="4">No Data Available</th>
                     @endif
-                    </tr>
                   </tbody>
                 </table>
               </div>

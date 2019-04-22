@@ -10,20 +10,24 @@ class DashboardController extends Controller
 {
     public function showJobInfo()
     {
-      $jobs = JobInfo::paginate(50);
+      $jobs = JobInfo::paginate(15);
       return view('dashboard.showJobInfo', ['jobs' => $jobs]);
     }
 
     public function showUserInfo()
     {
-      $users = UserProfiles::paginate(50);
+      $users = UserProfiles::paginate(15);
       return view('dashboard.showUserInfo', ['users' => $users]);
     }
-
-    public function search(Request $request)
+    public function searchJobInfo(Request $request)
     {
-      //TODO: Search Data and Paginate
-      return;
+      $jobs = JobInfo::search($request['searchKey'])->paginate(15);
+      return view('dashboard.showJobInfo', ['jobs' => $jobs]);
+    }
+    public function searchUserInfo(Request $request)
+    {
+      $users = UserProfiles::search($request['searchKey'])->paginate(15);
+      return view('dashboard.showUserInfo', ['users' => $users]);
     }
 
     public function deleteJob($id)

@@ -3,10 +3,14 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Scout\Searchable;
 use Str;
 
 class UserProfiles extends Model
 {
+
+  use Searchable;
+
   public $incrementing = false;
 
     protected static function boot()
@@ -25,4 +29,9 @@ class UserProfiles extends Model
     protected $table = 'userprofiles';
 
     public $timestamps = false;
+
+    public function toSearchableArray()
+    {
+      return $this->toArray();
+    }
 }

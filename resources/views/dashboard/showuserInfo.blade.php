@@ -23,29 +23,29 @@
           <div class="container-fluid">
             <div class="row justify-content-center text-center pt-4">
               <div class="col-12">
-                <h1 class="font-weight-bold">Job Information Backups</h1>
+                <h1 class="font-weight-bold">User Profile Backups</h1>
                 <table class="table table-bordered table-striped">
                   <thead>
                     <tr>
-                      <th scope="col">Title</th>
-                      <th scope="col">Description</th>
-                      <th scope="col">Skill Required</th>
-                      <th scope="col">Skill Required Pro</th>
+                      <th scope="col">First Name</th>
+                      <th scope="col">Last Name</th>
+                      <th scope="col">Skill</th>
+                      <th scope="col">Skill Pro</th>
                     </tr>
                   </thead>
                   <tbody>
-                    @if($jobs->count() > 0)
-                      @foreach($jobs as $job)
-                        <tr>
-                          <th>{{ $job->title }}</th>
-                          <th>{{ $job->description }}</th>
-                          <th>{{ $job->skillreq }}</th>
-                          <th>{{ $job->skillreqpro }}</th>
-                        </tr>
+                    <tr>
+                    @if($users->count() > 0)
+                      @foreach($users as $user)
+                          <th>{{ $user->firstname }}</th>
+                          <th>{{ $user->lastname }}</th>
+                          <th>{{ $user->skill }}</th>
+                          <th>{{ $user->skillpro }}</th>
                       @endforeach
                     @else
                       <th colspan="4">No Data Available</th>
                     @endif
+                    </tr>
                   </tbody>
                 </table>
               </div>

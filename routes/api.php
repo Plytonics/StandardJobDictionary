@@ -15,7 +15,7 @@ use Illuminate\Http\Request;
 Route::get('/getVersion', function(){
 		return response("Laravel 6.5", 200);
 });
-Route::post('store/jobinfo', 'BackupController@createJobInfo');
+Route::post('store/JobInfo', 'BackupController@createJobInfo');
 Route::post('store/UserProfiles', 'BackupController@createUserprofiles');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {

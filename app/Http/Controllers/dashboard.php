@@ -22,10 +22,10 @@ class dashboard extends Controller
   	}
     public function searchJobInfo(Request $request){
       $jobs = JobInfo::search($request['searchKey'])->paginate(15);
-      return view('dashboard.showJobInfo', ['Jobs' => $jobs]);
+      return view('dashboard.jobsinfo', ['jobs' => $jobs]);
     }
     public function searchUserInfo(Request $request){
       $jobs = UserInfo::search($request['searchKey'])->paginate(15);
-      return view('dashboard.showUserInfo', ['Jobs' => $jobs]);
+      return view('dashboard.showUserInfo', ['users' => $users]);
     }
 }

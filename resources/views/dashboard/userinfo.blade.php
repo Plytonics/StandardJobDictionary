@@ -82,6 +82,16 @@ tr:nth-child(even) {
     <div style="text-align:center">
     <h1> User Information Backups</h1>
   </div>
+  <form action="{{ route('jobsearch') }}" method="post" align="center">
+    @csrf
+    <div class="form-group">
+      <div class="input-group">
+        <input class="form-control" type="text" name="searchKey" value="{{ old('searchKey') }}">
+        <class="input-group-append">
+        <button class="btn btn-outline-secondary" type="sumbit">Search</button>
+      </div>
+    </div>
+</form>
       <table align="center">
         <thread>
           <tr>

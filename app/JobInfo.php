@@ -3,10 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Scout\Searchable;
 use Str;
 
 class JobInfo extends Model
 {
+  use Searchable;
 
   public $incrementing = false;
 
@@ -26,4 +28,13 @@ class JobInfo extends Model
     protected $table = 'jobinfo';
 
     public $timestamps = false;
+
+    public function toSearchableArray()
+    {
+        $array = $this->toArray();
+
+        // Customize array...
+
+        return $array;
+    }
 }

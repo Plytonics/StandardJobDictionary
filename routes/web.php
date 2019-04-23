@@ -10,18 +10,25 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::post('dashboard/job/search','dashboard@searchJobInfo')->name('jobsearch');
-Route::post('dashboard/job/search','dashboard@searchUserInfo')->name('usersearch');
+
+Route::get('/', function() {
+  return redirect('login');
+});
+
+Route::middleware('auth')->group(function() {
+  //routes to tables
+  Route::get('dashboard/jobinfo', "dashboard@showjobtable");
+  Route::get('dashboard/userinfo', "dashboard@showusertable");
+
+  Route::post('dashboard/job/search','dashboard@searchJobInfo')->name('jobsearch');
+  Route::post('dashboard/job/search','dashboard@searchUserInfo')->name('usersearch');
+});
 
 // indexChange
 Route::get('indexChange', function () {
     return view('indexChange');
 });
 
-//routes to tables
-Route::get('dashboard/jobinfo', "dashboard@showjobtable");
-
-Route::get('dashboard/userinfo', "dashboard@showusertable");
 
 // MainPage
 Route::get('MainPage', function () {

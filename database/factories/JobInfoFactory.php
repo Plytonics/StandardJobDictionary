@@ -7,7 +7,7 @@ $factory->define(JobInfo::class, function (Faker $faker) {
     return [
       'title' => $faker->jobTitle,
       'description' => $faker->bs,
-      'skillreq' => $faker->randomDigitNotNull,
+      'skillreq' => $faker->catchPhrase,
       'skillreqpro' => $faker->randomDigitNotNull
     ];
 });

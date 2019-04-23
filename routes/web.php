@@ -21,7 +21,7 @@ Route::middleware('auth')->group(function() {
   Route::get('dashboard/userinfo', "dashboard@showusertable");
 
   Route::post('dashboard/job/search','dashboard@searchJobInfo')->name('jobsearch');
-  Route::post('dashboard/job/search','dashboard@searchUserInfo')->name('usersearch');
+  Route::post('dashboard/user/search','dashboard@searchUserInfo')->name('usersearch');
 });
 
 // indexChange

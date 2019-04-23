@@ -22,6 +22,8 @@ Route::middleware('auth')->group(function() {
 
   Route::post('dashboard/job/search','dashboard@searchJobInfo')->name('jobsearch');
   Route::post('dashboard/user/search','dashboard@searchUserInfo')->name('usersearch');
+
+  Route::get('/logout', "Auth\LoginController@logout");
 });
 
 // indexChange

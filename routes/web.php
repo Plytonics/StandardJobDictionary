@@ -10,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::post('dashboard/job/search','dashboard@searchJobInfo')->name('jobsearch');
+Route::post('dashboard/job/search','dashboard@searchUserInfo')->name('usersearch');
 
 // indexChange
 Route::get('indexChange', function () {
@@ -62,4 +64,3 @@ Route::get('welcome', function () {
 });
 
 Auth::routes();
-

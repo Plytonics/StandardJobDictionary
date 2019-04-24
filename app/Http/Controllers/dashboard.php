@@ -17,15 +17,15 @@ class dashboard extends Controller
 
     public function showusertable(Request $request)
   	{
-      $jobs = UserProfiles::paginate(15);
-      return view("dashboard.userinfo", ["jobs" => $jobs]);
+      $users = UserProfiles::paginate(15);
+      return view("dashboard.userinfo", ["users" => $users]);
   	}
     public function searchJobInfo(Request $request){
       $jobs = JobInfo::search($request['searchKey'])->paginate(15);
       return view('dashboard.jobsinfo', ['jobs' => $jobs]);
     }
     public function searchUserInfo(Request $request){
-      $jobs = UserInfo::search($request['searchKey'])->paginate(15);
-      return view('dashboard.showUserInfo', ['users' => $users]);
+      $users = UserProfiles::search($request['searchKey'])->paginate(15);
+      return view('dashboard.userinfo', ['users' => $users]);
     }
 }

@@ -85,7 +85,7 @@ tr:nth-child(even) {
         <h1> User Information Backups</h1>
       </div>
       <div class="row justify-content-center">
-        <form action="{{ route('jobsearch') }}" method="post" align="center">
+        <form action="{{ route('usersearch') }}" method="post" align="center">
           @csrf
           <div class="form-group">
             <div class="input-group">
@@ -106,13 +106,13 @@ tr:nth-child(even) {
           </tr>
         </thread>
         <tbody>
-          @if($jobs->count() > 0)
-           @foreach($jobs as $job)
+          @if($users->count() > 0)
+           @foreach($users as $user)
             <tr>
-              <th>{{ $job->firstname }}</th>
-              <th>{{ $job->lastname }}</th>
-              <th>{{ $job->skill }}</th>
-              <th>{{ $job->skillpro }}</th>
+              <th>{{ $user->firstname }}</th>
+              <th>{{ $user->lastname }}</th>
+              <th>{{ $user->skill }}</th>
+              <th>{{ $user->skillpro }}</th>
             </tr>
           @endforeach
         @else
@@ -121,7 +121,7 @@ tr:nth-child(even) {
       </tbody>
     </table>
     <div class="row justify-content-center pt-3">
-      {{ $jobs->links() }}
+      {{ $users->links() }}
     </div>
   </div>
 </html>

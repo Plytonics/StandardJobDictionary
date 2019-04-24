@@ -1,6 +1,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" />
 <style>
 body {margin:0;}
 
@@ -78,19 +79,22 @@ tr:nth-child(even) {
 
 <div class="main">
   <body>
-    <div style="text-align:center">
-    <h1> Job Information Backups</h1>
-  </div>
-  <form action="{{ route('jobsearch') }}" method="post" align="center">
-    @csrf
-    <div class="form-group">
-      <div class="input-group">
-        <input class="form-control" type="text" name="searchKey" value="{{ old('searchKey') }}">
-        <class="input-group-append">
-        <button class="btn btn-outline-secondary" type="sumbit">Search</button>
+    <div class="container-fluid">
+      <div class="row pt-5 justify-content-center">
+        <h1> Job Information Backups</h1>
       </div>
-    </div>
-</form>
+      <div class="row justify-content-center">
+        <form action="{{ route('jobsearch') }}" method="post" align="center">
+          @csrf
+          <div class="form-group">
+            <div class="input-group">
+              <input class="form-control" type="text" name="searchKey" value="{{ old('searchKey') }}">
+              <class="input-group-append">
+              <button class="btn btn-outline-secondary" type="sumbit">Search</button>
+            </div>
+          </div>
+        </form>
+      </div>
       <table align="center">
         <thread>
           <tr>
@@ -102,17 +106,22 @@ tr:nth-child(even) {
         </thread>
         <tbody>
           @if($jobs->count() > 0)
-           @foreach($jobs as $job)
-            <tr>
-              <th>{{ $job->title }}</th>
-              <th>{{ $job->description }}</th>
-              <th>{{ $job->skillreq }}</th>
-              <th>{{ $job->skillreqpro }}</th>
-            </tr>
+          @foreach($jobs as $job)
+          <tr>
+            <th>{{ $job->title }}</th>
+            <th>{{ $job->description }}</th>
+            <th>{{ $job->skillreq }}</th>
+            <th>{{ $job->skillreqpro }}</th>
+          </tr>
           @endforeach
-        @else
-         <th> No Data Avaliable</th>
-        @endif
-      </tbody>
-    </table>
+          @else
+          <th> No Data Avaliable</th>
+          @endif
+        </tbody>
+      </table>
+      <div class="row justify-content-center pt-3">
+        {{ $jobs->links() }}
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 </html>
